@@ -1,0 +1,12 @@
+The following command converts bigint(20220107045030) to timestamp datatype
+-------------------------------------------------------------------------------------------------------
+SELECT 
+to_timestamp (20220107045030::bigint::text,'yyyymmddhhmiss')::timestamp at time zone 'UTC'
+at time zone 'UTC'
+-------------------------------------------------------------------------------------------------------
+The following command gives the difference between a timestamp column and bigint
+-------------------------------------------------------------------------------------------------------
+SELECT 
+payment_date-(to_timestamp ('20220107045030'::bigint::text,'yyyymmddhhmiss')::timestamp at time zone 'UTC'
+at time zone 'UTC') from payment
+-------------------------------------------------------------------------------------------------------
