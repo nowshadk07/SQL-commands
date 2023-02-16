@@ -10,3 +10,9 @@ SELECT
 payment_date-(to_timestamp ('20220107045030'::bigint::text,'yyyymmddhhmiss')::timestamp at time zone 'UTC'
 at time zone 'UTC') from payment
 -------------------------------------------------------------------------------------------------------
+In HIVE QL the method is different
+-------------------------------------------------------------------------------------------------------
+from_unixtime(unix_timestamp('20130502081559999', 'yyyyMMddHHmmss')) >>> 2013-05-03 00:54:59
+from_unixtime(unix_timestamp('20130502081559999', 'yyyyMMddHHmmssMS')) >>> 2013-09-02 08:15:59
+from_unixtime(unix_timestamp('20130502081559999', 'yyyyMMddHHmmssMS')) >>> 2013-05-02 08:10:39
+from_unixtime(unix_timestamp(substr('20130502081559999',1,14), 'yyyyMMddHHmmss')) >>> 2013-05-02 08:15:59
